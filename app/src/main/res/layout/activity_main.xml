@@ -8,12 +8,94 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Bem-Vindo"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <EditText
+        android:id="@+id/senhaId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="senha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userId"
+        app:layout_constraintTop_toBottomOf="@+id/userId"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Usúario"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.172" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:text="Não possui uma conta?"
+        app:layout_constraintEnd_toEndOf="@+id/entrarId"
+        app:layout_constraintTop_toBottomOf="@+id/entrarId" />
+
+    <Button
+        android:id="@+id/entrarId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="btn_entrar"
+        android:text="Entrar"
+        app:layout_constraintEnd_toEndOf="@+id/senhaId"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/senhaId"
+        app:layout_constraintTop_toBottomOf="@+id/senhaId" />
+
+    <Button
+        android:id="@+id/cadastrarId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/design_default_color_on_primary"
+        android:insetLeft="-43dp"
+        android:insetTop="0dp"
+        android:insetRight="-28dp"
+        android:onClick="btn_cadastrar"
+        android:text="Criar agora"
+        android:textColor="@color/purple"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/entrarId" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="174dp"
+        android:layout_height="154dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/logo_livro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
