@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
             usuario.setText(usuarioS);
             senha.setText(senhaS);
 
-            if (status.equals("logado")) {
+            //if (status.equals("logado")) {
                 Intent intent=new Intent(this,Home.class);
                 startActivity(intent);
-            }
+            //}
 
             usuario.setOnClickListener((View view) ->{
                 usuario.setText("");

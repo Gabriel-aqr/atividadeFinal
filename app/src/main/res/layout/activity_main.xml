@@ -9,16 +9,21 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="292dp"
+        android:layout_height="77dp"
+        android:paddingTop="15dp"
+        android:shadowColor="#300099"
+        android:shadowRadius="66"
         android:text="Bem-Vindo"
+        android:textAlignment="center"
+        android:textColor="#100033"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <EditText
         android:id="@+id/senhaId"
@@ -44,17 +49,16 @@
         android:text="Usúario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="20dp"
         android:text="Não possui uma conta?"
         app:layout_constraintEnd_toEndOf="@+id/entrarId"
         app:layout_constraintTop_toBottomOf="@+id/entrarId" />
@@ -66,24 +70,30 @@
         android:layout_marginTop="24dp"
         android:onClick="btn_entrar"
         android:text="Entrar"
+        android:backgroundTint="#b3b3ff"
+        android:textColor="#eaeafa"
+        android:shadowColor="#e6e6ff"
+        android:shadowRadius="22"
         app:layout_constraintEnd_toEndOf="@+id/senhaId"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="@+id/senhaId"
-        app:layout_constraintTop_toBottomOf="@+id/senhaId" />
+        app:layout_constraintTop_toBottomOf="@+id/senhaId"
+
+        />
 
     <Button
         android:id="@+id/cadastrarId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="56dp"
-        android:backgroundTint="@color/design_default_color_on_primary"
+        android:background="@drawable/transparent"
         android:insetLeft="-43dp"
         android:insetTop="0dp"
         android:insetRight="-28dp"
         android:onClick="btn_cadastrar"
         android:text="Criar agora"
-        android:textColor="@color/purple"
+        android:textColor="#4d4dff"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/entrarId" />
 

@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">TarefaFinal</string>
+    <string name="app_name">Tarefa Final</string>
+    <string name="button">+</string>
+    <string name="catalogo_de_livros">Catalogo de livros</string>
 </resources>
