@@ -10,11 +10,11 @@
         android:id="@+id/itemTitulo"
         android:layout_width="183dp"
         android:layout_height="58dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="108dp"
         android:text="Titulo"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemCapa" />
 
@@ -22,11 +22,11 @@
         android:id="@+id/itemAutor"
         android:layout_width="183dp"
         android:layout_height="58dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="108dp"
         android:text="Autor"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemTitulo" />
 
