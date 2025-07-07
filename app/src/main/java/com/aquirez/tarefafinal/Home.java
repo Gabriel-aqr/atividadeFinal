@@ -1,27 +1,44 @@
 package com.aquirez.tarefafinal;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.splashscreen.SplashScreen;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.aquirez.tarefafinal.Controller.LivroAdapter;
+import com.aquirez.tarefafinal.database.livroDB;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Home extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private LivroAdapter adapter;
+    private livroDB livroDAO;
 
-    protected void onCreate (Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
+        recyclerView = findViewById(R.id.recyclerLivros);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        livroDAO = new livroDB(this);
+        adapter = new LivroAdapter(livroDAO.listarTodos());
+        recyclerView.setAdapter(adapter);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.).commit();
-        }
+        adapter.setOnItemClickListener(livro -> {
+            Intent it = new Intent(this, BookInsert.class);
+            it.putExtra("livro_id", livro.getId());
+            startActivity(it);
+        });
 
+        FloatingActionButton fab = findViewById(R.id.fabAdd);
+        fab.setOnClickListener(v -> startActivity(new Intent(this, BookInsert.class)));
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.setLivros(livroDAO.listarTodos());
+    }
 }
-
