@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import com.aquirez.tarefafinal.database.livroDB;
 import com.aquirez.tarefafinal.entidade.livro;
@@ -54,6 +56,7 @@ public class BookInsert extends AppCompatActivity {
 
         btnCapa.setOnClickListener(v -> {
             startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQ_CAMERA);
+
         });
 
         btnSalvar.setOnClickListener(v -> {

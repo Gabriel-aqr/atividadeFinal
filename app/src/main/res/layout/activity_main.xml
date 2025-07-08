@@ -13,7 +13,7 @@
         android:layout_height="66dp"
         android:paddingTop="15dp"
         android:shadowColor="#300099"
-        android:shadowRadius="51"
+        android:shadowRadius="80"
         android:text="Bem-Vindo"
         android:textAlignment="center"
         android:textColor="#f1eff5"

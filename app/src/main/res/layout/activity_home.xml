@@ -23,7 +23,10 @@
         android:layout_margin="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/l_blue"
+        android:backgroundTint="#b3b3ff"
+        android:textColor="#eaeafa"
+        android:shadowColor="#e6e6ff"
+        android:shadowRadius="22"
         android:src="@drawable/mais"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

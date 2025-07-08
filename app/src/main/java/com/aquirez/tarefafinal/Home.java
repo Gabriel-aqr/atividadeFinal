@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class Home extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LivroAdapter adapter;
-    private livroDB livroDAO;
+    private livroDB livroDB;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,8 +22,8 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         recyclerView = findViewById(R.id.recyclerLivros);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        livroDAO = new livroDB(this);
-        adapter = new LivroAdapter(livroDAO.listarTodos());
+        livroDB = new livroDB(this);
+        adapter = new LivroAdapter(livroDB.listarTodos());
         recyclerView.setAdapter(adapter);
 
         adapter.setOnItemClickListener(livro -> {
@@ -39,6 +39,6 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        adapter.setLivros(livroDAO.listarTodos());
+        adapter.setLivros(livroDB.listarTodos());
     }
 }
