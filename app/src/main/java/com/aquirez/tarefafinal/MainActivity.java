@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText usuario, senha;
     private Controller controller;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
             usuario = findViewById(R.id.userId);
             senha = findViewById(R.id.senhaId);
             controller = new Controller(this);
-
             return insets;
         });
     }

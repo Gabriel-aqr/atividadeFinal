@@ -1,12 +1,11 @@
 package com.aquirez.tarefafinal.database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
 import com.aquirez.tarefafinal.entidade.livro;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +37,7 @@ public class livroDB {
         return db.delete("livros", "id=?", new String[]{String.valueOf(id)});
     }
 
+    @SuppressLint("Range")
     public livro buscarPorId(long id) {
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c = db.query("livros", null, "id=?", new String[]{String.valueOf(id)}, null,null,null);
@@ -54,6 +54,7 @@ public class livroDB {
         return null;
     }
 
+    @SuppressLint("Range")
     public List<livro> listarTodos() {
         List<livro> lista = new ArrayList<>();
         SQLiteDatabase db = helper.getReadableDatabase();

@@ -1,7 +1,5 @@
-package com.aquirez.tarefafinal;
+package com.aquirez.tarefafinal.Controller;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -11,12 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.aquirez.tarefafinal.R;
 import com.aquirez.tarefafinal.database.livroDB;
 import com.aquirez.tarefafinal.entidade.livro;
-
 import java.io.File;
 import java.io.FileOutputStream;
 
@@ -28,8 +25,6 @@ public class BookInsert extends AppCompatActivity {
     private livroDB ldb;
     private livro atual;
 
-    @SuppressLint("MissingInflatedId")
-    @Override
     protected void onCreate(Bundle s) {
         super.onCreate(s);
         setContentView(R.layout.livro_form);
@@ -41,7 +36,6 @@ public class BookInsert extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btnSalvar);
         btnExcluir = findViewById(R.id.btnExcluir);
         btnCapa = findViewById(R.id.btnCapa);
-
         long id = getIntent().getLongExtra("livro_id", -1);
         if (id != -1) {
             atual = ldb.buscarPorId(id);
@@ -56,7 +50,6 @@ public class BookInsert extends AppCompatActivity {
 
         btnCapa.setOnClickListener(v -> {
             startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQ_CAMERA);
-
         });
 
         btnSalvar.setOnClickListener(v -> {
@@ -78,10 +71,8 @@ public class BookInsert extends AppCompatActivity {
         });
     }
 
-    @Override
     protected void onActivityResult(int rq, int res, Intent data) {
         super.onActivityResult(rq, res, data);
-        if (rq == REQ_CAMERA && res == Activity.RESULT_OK) {
             Bundle b = data.getExtras();
             Bitmap bmp = (Bitmap) b.get("data");
             try {
@@ -93,6 +84,5 @@ public class BookInsert extends AppCompatActivity {
                 ivCapa.setImageURI(uri);
                 ivCapa.setTag(uri.toString());
             } catch (Exception e) { e.printStackTrace(); }
-        }
     }
 }

@@ -7,14 +7,14 @@ import android.content.ContentValues;
 import com.aquirez.tarefafinal.database.database;
 
 public class Controller {
-    private database DBhelper;
+    private database DBcontroller;
 
     public Controller(Context context) {
-        DBhelper = new database(context);
+        DBcontroller = new database(context);
     }
 
     public boolean cadastrar(String u, String s) {
-        SQLiteDatabase db = DBhelper.getWritableDatabase();
+        SQLiteDatabase db = DBcontroller.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("usuario", u);
         contentValues.put("senha", s);
@@ -23,7 +23,7 @@ public class Controller {
     }
 
     public boolean login(String u, String s) {
-        SQLiteDatabase db = DBhelper.getReadableDatabase();
+        SQLiteDatabase db = DBcontroller.getReadableDatabase();
         Cursor cursor = db.query("users", null, "usuario=? AND senha=?", new String[]{u,s}, null,null,null);
         boolean ok = cursor.moveToFirst();
         cursor.close();

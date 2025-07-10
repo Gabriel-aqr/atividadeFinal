@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.aquirez.tarefafinal.R;
 import com.aquirez.tarefafinal.entidade.livro;
@@ -19,11 +18,11 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.VH> {
 
     public LivroAdapter(List<livro> livros) { this.livros = livros; }
 
-    @NonNull @Override public VH onCreateViewHolder(@NonNull ViewGroup p, int v) {
+     public VH onCreateViewHolder(ViewGroup p, int v) {
         return new VH(LayoutInflater.from(p.getContext()).inflate(R.layout.item_livro, p, false));
     }
 
-    @Override public void onBindViewHolder(@NonNull VH h, int p) {
+     public void onBindViewHolder(VH h, int p) {
         livro l = livros.get(p);
         h.titulo.setText(l.getTitulo());
         h.autor.setText(l.getAutor());
@@ -33,7 +32,7 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.VH> {
         });
     }
 
-    @Override public int getItemCount() { return livros.size(); }
+    public int getItemCount() { return livros.size(); }
 
     public void setLivros(List<livro> newList) {
         livros = newList;

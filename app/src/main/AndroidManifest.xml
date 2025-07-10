@@ -25,11 +25,11 @@
         </activity>
 
         <activity
-            android:name=".BookInsert">
+            android:name=".Controller.BookInsert">
         </activity>
 
         <activity
-            android:name=".SplashScreen"
+            android:name=".Controller.SplashScreen"
             android:exported="true">
 
             <intent-filter>
