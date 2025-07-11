@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="292dp"
+        android:layout_height="66dp"
+        android:paddingTop="15dp"
+        android:shadowColor="#300099"
+        android:shadowRadius="80"
+        android:text="Bem-Vindo"
+        android:textAlignment="center"
+        android:textColor="#f1eff5"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <EditText
+        android:id="@+id/userIdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Usuário"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <EditText
+        android:id="@+id/senhaIdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="208dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userIdd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userIdd"
+        app:layout_constraintTop_toTopOf="@+id/userIdd"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <EditText
+        android:id="@+id/confirmarSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Confime A Senha"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userIdd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userIdd"
+        app:layout_constraintTop_toBottomOf="@+id/senhaIdd"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <Button
+        android:id="@+id/registerId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#b3b3ff"
+        android:onClick="btnRegistrar"
+        android:shadowColor="#e6e6ff"
+        android:shadowRadius="22"
+        android:text="Criar Conta"
+        android:textColor="#eaeafa"
+        app:layout_constraintEnd_toEndOf="@+id/senhaIdd"
+        app:layout_constraintHorizontal_bias="0.489"
+
+        app:layout_constraintStart_toStartOf="@+id/senhaIdd"
+        app:layout_constraintTop_toBottomOf="@+id/confirmarSenha" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="174dp"
+        android:layout_height="154dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/logo_livro" />
+</androidx.constraintlayout.widget.ConstraintLayout>

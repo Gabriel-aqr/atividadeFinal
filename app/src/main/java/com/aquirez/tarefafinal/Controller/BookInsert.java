@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.aquirez.tarefafinal.R;
 import com.aquirez.tarefafinal.database.livroDB;
 import com.aquirez.tarefafinal.entidade.livro;
@@ -25,11 +24,10 @@ public class BookInsert extends AppCompatActivity {
     private livroDB ldb;
     private livro atual;
 
-    protected void onCreate(Bundle s) {
-        super.onCreate(s);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.livro_form);
         ldb = new livroDB(this);
-
         etTitulo = findViewById(R.id.etTitulo);
         etAutor = findViewById(R.id.etAutor);
         ivCapa = findViewById(R.id.ivCapa);
@@ -47,11 +45,9 @@ public class BookInsert extends AppCompatActivity {
                 finish();
             });
         }
-
         btnCapa.setOnClickListener(v -> {
             startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQ_CAMERA);
         });
-
         btnSalvar.setOnClickListener(v -> {
             String t = etTitulo.getText().toString();
             String a = etAutor.getText().toString();
@@ -70,7 +66,6 @@ public class BookInsert extends AppCompatActivity {
             finish();
         });
     }
-
     protected void onActivityResult(int rq, int res, Intent data) {
         super.onActivityResult(rq, res, data);
             Bundle b = data.getExtras();

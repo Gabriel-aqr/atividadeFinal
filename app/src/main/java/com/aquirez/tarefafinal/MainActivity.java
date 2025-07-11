@@ -3,6 +3,7 @@ package com.aquirez.tarefafinal;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
@@ -10,12 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.aquirez.tarefafinal.Controller.Cadastrar;
 import com.aquirez.tarefafinal.Controller.Controller;
 
 public class MainActivity extends AppCompatActivity {
     private EditText usuario, senha;
     private Controller controller;
-
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-
     public void btnEntrar(View view) {
         String u = usuario.getText().toString();
         String s = senha.getText().toString();
@@ -45,14 +45,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Credenciais inválidas", Toast.LENGTH_SHORT).show();
         }
     }
-
     public void btnCadastrar(View view) {
-        String u = usuario.getText().toString();
-        String s = senha.getText().toString();
-        if (controller.cadastrar(u, s)) {
-            Toast.makeText(this, "Cadastro realizado", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Erro no cadastro", Toast.LENGTH_SHORT).show();
-        }
+        startActivity(new Intent(this, Cadastrar.class));
+        finish();
     }
 }
