@@ -59,10 +59,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="28dp"
         android:text="Não possui uma conta?"
-        app:layout_constraintEnd_toEndOf="@+id/entrarId"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/entrarId" />
 
     <Button
@@ -87,8 +87,8 @@
         android:id="@+id/cadastrarId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/transparent"
         android:insetLeft="-43dp"
         android:insetTop="0dp"
@@ -96,7 +96,7 @@
         android:onClick="btnCadastrar"
         android:text="Criar agora"
         android:textColor="#4d4dff"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/entrarId" />
 
     <ImageView
