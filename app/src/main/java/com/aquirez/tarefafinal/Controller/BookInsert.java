@@ -18,7 +18,7 @@ import java.io.FileOutputStream;
 
 public class BookInsert extends AppCompatActivity {
     private static final int REQ_CAMERA = 100;
-    private EditText etTitulo, etAutor;
+    private EditText etTitulo, etAutor, etDescricao;
     private ImageView ivCapa;
     private Button btnSalvar, btnExcluir, btnCapa;
     private livroDB ldb;
@@ -30,6 +30,7 @@ public class BookInsert extends AppCompatActivity {
         ldb = new livroDB(this);
         etTitulo = findViewById(R.id.etTitulo);
         etAutor = findViewById(R.id.etAutor);
+        etDescricao = findViewById(R.id.etDescricao);
         ivCapa = findViewById(R.id.ivCapa);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnExcluir = findViewById(R.id.btnExcluir);
@@ -39,6 +40,7 @@ public class BookInsert extends AppCompatActivity {
             atual = ldb.buscarPorId(id);
             etTitulo.setText(atual.getTitulo());
             etAutor.setText(atual.getAutor());
+            etDescricao.setText((atual.getDescricao()));
             ivCapa.setImageURI(Uri.parse(atual.getCapaUri()));
             btnExcluir.setOnClickListener(v -> {
                 ldb.excluir(atual.getId());
@@ -51,6 +53,7 @@ public class BookInsert extends AppCompatActivity {
         btnSalvar.setOnClickListener(v -> {
             String t = etTitulo.getText().toString();
             String a = etAutor.getText().toString();
+            String d = etDescricao.getText().toString();
             if (t.isEmpty() || a.isEmpty()) {
                 Toast.makeText(this, "Preencha todos campos", Toast.LENGTH_SHORT).show();
                 return;
@@ -58,6 +61,7 @@ public class BookInsert extends AppCompatActivity {
             if (atual == null) atual = new livro();
             atual.setTitulo(t);
             atual.setAutor(a);
+            atual.setDescricao(d);
             if (ivCapa.getTag() != null) {
                 atual.setCapaUri(ivCapa.getTag().toString());
             }

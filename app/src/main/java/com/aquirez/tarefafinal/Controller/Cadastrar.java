@@ -29,14 +29,18 @@ public class Cadastrar extends AppCompatActivity {
     public void btnRegistrar(View view) {
         String u = usuario.getText().toString();
         String s = senha.getText().toString();
-        if (controller.cadastrar(u, s) && senhaConfirmacao == senha ) {
+        String s2 = senhaConfirmacao.getText().toString();
+        if (s.equals(s2)) {
             Toast.makeText(this, "Cadastro realizado.", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this, MainActivity.class));
-                    finish();
-        } else if (controller.cadastrar(u, s) && senhaConfirmacao != senha){
+            controller.cadastrar(u, s);
+            controller.login(u, s);
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        } else if (!s.equals(s2)) {
             Toast.makeText(this, "As senhas não coincidem.", Toast.LENGTH_SHORT).show();
+
         } else {
-            Toast.makeText(this, "Erro no cadastro.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Já existe uma conta com esses credenciais.", Toast.LENGTH_SHORT).show();
         }
     }
 }

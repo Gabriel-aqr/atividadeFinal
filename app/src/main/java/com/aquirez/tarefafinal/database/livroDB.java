@@ -20,6 +20,7 @@ public class livroDB {
         cv.put("titulo", l.getTitulo());
         cv.put("autor", l.getAutor());
         cv.put("capaUri", l.getCapaUri());
+        cv.put("descricao", l.getDescricao());
         return db.insert("livros", null, cv);
     }
 
@@ -29,6 +30,7 @@ public class livroDB {
         cv.put("titulo", l.getTitulo());
         cv.put("autor", l.getAutor());
         cv.put("capaUri", l.getCapaUri());
+        cv.put("descricao", l.getDescricao());
         return db.update("livros", cv, "id=?", new String[]{String.valueOf(l.getId())});
     }
 
@@ -47,6 +49,7 @@ public class livroDB {
             l.setTitulo(c.getString(c.getColumnIndex("titulo")));
             l.setAutor(c.getString(c.getColumnIndex("autor")));
             l.setCapaUri(c.getString(c.getColumnIndex("capaUri")));
+            l.setDescricao(c.getString(c.getColumnIndex("descricao")));
             c.close();
             return l;
         }
@@ -65,6 +68,7 @@ public class livroDB {
             l.setTitulo(c.getString(c.getColumnIndex("titulo")));
             l.setAutor(c.getString(c.getColumnIndex("autor")));
             l.setCapaUri(c.getString(c.getColumnIndex("capaUri")));
+            l.setDescricao(c.getString(c.getColumnIndex("descricao")));
             lista.add(l);
         }
         c.close();

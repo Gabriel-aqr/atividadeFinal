@@ -26,6 +26,7 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.VH> {
         livro l = livros.get(p);
         h.titulo.setText(l.getTitulo());
         h.autor.setText(l.getAutor());
+        h.descricao.setText(l.getDescricao());
         if (l.getCapaUri() != null) h.capa.setImageURI(Uri.parse(l.getCapaUri()));
         h.itemView.setOnClickListener(v -> {
             if (listener != null) listener.onClick(l);
@@ -42,12 +43,13 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.VH> {
     public void setOnItemClickListener(OnItemClickListener l) { listener = l; }
 
     static class VH extends RecyclerView.ViewHolder {
-        TextView titulo, autor;
+        TextView titulo, autor, descricao;
         ImageView capa;
         VH(View v) {
             super(v);
             titulo = v.findViewById(R.id.itemTitulo);
             autor = v.findViewById(R.id.itemAutor);
+            descricao = v.findViewById(R.id.itemDescricao);
             capa = v.findViewById(R.id.itemCapa);
         }
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -13,7 +14,7 @@
             android:id="@+id/etTitulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="8dp"
             android:hint="Título"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -26,6 +27,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:hint="Autor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etTitulo" />
+
+        <EditText
+            android:id="@+id/etDescricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:hint="Descrição"
+            android:text=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,19 +59,18 @@
             android:id="@+id/btnCapa"
             android:layout_width="73dp"
             android:layout_height="29dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#b3b3ff"
             android:paddingLeft="3sp"
             android:paddingTop="3sp"
             android:paddingRight="3sp"
             android:paddingBottom="3sp"
-            android:text="Tirar Foto"
-            android:textSize="10sp"
-            android:backgroundTint="#b3b3ff"
-            android:textColor="#eaeafa"
             android:shadowColor="#e6e6ff"
             android:shadowRadius="22"
+            android:text="Tirar Foto"
+            android:textColor="#eaeafa"
+            android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivCapa" />
 
@@ -66,29 +78,28 @@
             android:id="@+id/btnSalvar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="24dp"
-            android:text="Salvar"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="#b3b3ff"
-            android:textColor="#eaeafa"
             android:shadowColor="#e6e6ff"
             android:shadowRadius="22"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etAutor" />
+            android:text="Salvar"
+            android:textColor="#eaeafa"
+            app:layout_constraintBottom_toBottomOf="@+id/btnExcluir"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/btnExcluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
             android:backgroundTint="#b3b3ff"
-            android:textColor="#eaeafa"
             android:shadowColor="#e6e6ff"
             android:shadowRadius="22"
             android:text="Excluir"
+            android:textColor="#eaeafa"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etAutor" />
+            app:layout_constraintTop_toBottomOf="@+id/etDescricao" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

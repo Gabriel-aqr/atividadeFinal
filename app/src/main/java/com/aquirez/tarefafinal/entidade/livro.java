@@ -2,10 +2,18 @@ package com.aquirez.tarefafinal.entidade;
 
 public class livro {
     private long id;
-    private String titulo, autor, capaUri;
+    private String titulo, autor, capaUri, descricao;
 
     public long getId() {
         return id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public void setId(long id) {
