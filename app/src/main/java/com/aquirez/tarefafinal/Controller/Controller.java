@@ -1,9 +1,12 @@
 package com.aquirez.tarefafinal.Controller;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
+import android.widget.Toast;
+
 import com.aquirez.tarefafinal.database.database;
 
 public class Controller {
@@ -28,5 +31,14 @@ public class Controller {
         boolean ok = cursor.moveToFirst();
         cursor.close();
         return ok;
+    }
+
+    public void salvar(Context context, String usuario, String senha) {
+        SharedPreferences pref = context.getSharedPreferences("Lista_Users", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("usuario", usuario);
+        editor.putString("senha", senha);
+        editor.apply();
+        Toast.makeText(context.getApplicationContext(), "Salvo.", Toast.LENGTH_SHORT).show();
     }
 }
