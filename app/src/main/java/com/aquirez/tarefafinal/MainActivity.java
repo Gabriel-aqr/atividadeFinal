@@ -17,7 +17,7 @@ import com.aquirez.tarefafinal.Controller.Controller;
 
 public class MainActivity extends AppCompatActivity {
     private EditText usuario, senha, usuarioL, senhaL;
-    SharedPreferences prefs;
+//    SharedPreferences prefs;
     private Controller controller;
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,17 +30,17 @@ public class MainActivity extends AppCompatActivity {
             usuario = findViewById(R.id.userId);
             senha = findViewById(R.id.senhaId);
             controller = new Controller(this);
-
-            prefs = getSharedPreferences("Lista_Users", MODE_PRIVATE);
-            String usuarioS = prefs.getString("usuario", "usuario");
-            String senhaS = prefs.getString("senha", "senha");
-            usuarioL.setText(usuarioS);
-            senhaL.setText(senhaS);
-            if (controller.login(usuarioS, senhaS)) {
-                startActivity(new Intent(this, Home.class));
-                controller.salvar(this,usuarioL.getText().toString(),senhaL.getText().toString());
-                finish();
-            }
+//
+//            prefs = getSharedPreferences("Lista_Users", MODE_PRIVATE);
+//            String usuarioS = prefs.getString("usuario", "usuario");
+//            String senhaS = prefs.getString("senha", "senha");
+//            usuarioL.setText(usuarioS);
+//            senhaL.setText(senhaS);
+//            if (controller.login(usuarioS, senhaS)) {
+//                startActivity(new Intent(this, Home.class));
+//                controller.salvar(this,usuarioL.getText().toString(),senhaL.getText().toString());
+//                finish();
+//            }
             return insets;
         });
     }
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (controller.login(u, s)) {
             startActivity(new Intent(this, Home.class));
-            controller.salvar(this,usuarioL.getText().toString(),senhaL.getText().toString());
+//            controller.salvar(this,usuarioL.getText().toString(),senhaL.getText().toString());
             finish();
         } else {
             Toast.makeText(this, "Credenciais inválidas", Toast.LENGTH_SHORT).show();
